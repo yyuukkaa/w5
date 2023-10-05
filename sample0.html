@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>サンプル</title>
+</head>
+<body>
+
+<h1>cookie sample 0 </h1>
+
+<p id="msg">Cookieを書きます。</p>
+<script>
+document.cookie = 'address=Tokyo';
+document.cookie = 'user=梅子;';  // 次の行で上書きされます。
+document.cookie = "user=Umeko; max-age=3600;"; // max-age 60*60=3600秒＝1時間
+
+let e = document.getElementById('msg');
+e.insertAdjacentHTML('afterend', '<p>' + document.cookie + '</p>');
+</script>
+
+</body>
+</html>
+<script>

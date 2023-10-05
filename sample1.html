@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>サンプル</title>
+</head>
+<body>
+<h1>cookie sample 1</h1>
+  
+<p id="msg">Cookie を読みます</p>
+
+<script>
+let e = document.getElementById('msg');
+e.insertAdjacentHTML('afterend', '<p>' + document.cookie + '</p>');
+  console.log(document.cookie);
+</script>
+
+</body>
+</html>

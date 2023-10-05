@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>サンプル</title>
+</head>
+<body>
+  
+<h1>cookie sample 2</h1> 
+<p>Cookie の表示と削除　</p>
+
+<script>
+function showCookie() {
+  console.log(document.cookie);
+  let e = document.getElementById('msg'); 
+　　　　　e.insertAdjacentHTML('afterend', '<p>' + document.cookie + '</p>');
+}
+
+function removeCookies(){
+  document.cookie = "name=; max-age=0;";
+  document.cookie = "address=; max-age=0;";
+  document.cookie = "old=; max-age=0;";
+  document.cookie = "user=; max-age=0;";
+  
+}
+
+const clearAllCookies = () => 
+    document.cookie.split(';').forEach(cookie => document.cookie = cookie.replace(/^ +/, '').replace(/=.*/, `=;max-age=${0};`));
+
+</script>
+<div style="background-color : #CCC;">
+   <input type="button" value="クッキー表示" onclick="showCookie()">
+  <input type="button" value="クッキー削除" onclick=”removeCookies()">
+  <input type="button" value="クッキー全部削除" onclick=”clearAllCookies()">
+</div>
+  <p id="msg">Cookie の値　</p>
+  
+
+</body>
+</html>
